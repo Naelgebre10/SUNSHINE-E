@@ -1,53 +1,65 @@
 <section>
   <h2>Get in Touch</h2>
-  <p>Please fill out the form below and our team will get back to you promptly.</p>
+  <p>We'd love to hear from you. Please complete the appropriate form below.</p>
 
   <!-- Lead Inquiry Form -->
+  <h3>Business Inquiry</h3>
   <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
     <input type="hidden" name="oid" value="00DWU00000O3VHJ" />
+    <input type="hidden" name="retURL" value="https://naelgebre10.github.io/THANKYOU/" />
+
     <input type="text" name="first_name" placeholder="First Name" required />
     <input type="text" name="last_name" placeholder="Last Name" required />
     <input type="email" name="email" placeholder="Email Address" required />
     <input type="text" name="company" placeholder="Company Name" required />
+
     <select name="lead_status" required>
-      <option value="">Select Lead Status</option>
+      <option value="">Lead Status</option>
       <option value="New">New</option>
       <option value="Working">Working</option>
       <option value="Closed - Converted">Closed - Converted</option>
       <option value="Closed - Not Converted">Closed - Not Converted</option>
     </select>
-    <textarea name="description" placeholder="Message or Inquiry" required></textarea>
-    <button type="submit">Submit</button>
+
+    <textarea name="description" placeholder="Tell us more about your needs..." required></textarea>
+    <button type="submit">Submit Inquiry</button>
   </form>
 
-  <br/>
+  <hr style="margin: 40px 0;" />
 
-  <!-- Customer Support Request Form -->
+  <!-- Customer Support Form -->
   <h3>Customer Support</h3>
   <form action="https://yourInstance.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST">
     <input type="hidden" name="orgid" value="00DWU00000O3VHJ" />
+    <input type="hidden" name="retURL" value="https://naelgebre10.github.io/THANKYOU/" />
+
     <input type="text" name="name" placeholder="Full Name" required />
     <input type="email" name="email" placeholder="Email Address" required />
-    <input type="text" name="subject" placeholder="Issue Subject" required />
+    <input type="text" name="subject" placeholder="Support Subject" required />
+
     <select name="origin" required>
-      <option value="">Select Case Origin</option>
+      <option value="">Case Origin</option>
       <option value="Phone">Phone</option>
       <option value="Email">Email</option>
       <option value="Web">Web</option>
     </select>
+
     <select name="status" required>
-      <option value="">Select Case Status</option>
+      <option value="">Case Status</option>
       <option value="New">New</option>
       <option value="Working">Working</option>
       <option value="Closed">Closed</option>
     </select>
+
     <select name="priority" required>
-      <option value="">Select Severity</option>
+      <option value="">Severity</option>
       <option value="High">High</option>
       <option value="Medium">Medium</option>
       <option value="Low">Low</option>
     </select>
-    <textarea name="description" placeholder="Describe your issue..." required></textarea>
-    <button type="submit">Submit Support Request</button>
+
+    <textarea name="description" placeholder="Please describe the issue in detail..." required></textarea>
+    <button type="submit">Submit Request</button>
   </form>
 </section>
+
