@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Home - Sunshine Electronics</title>
+    <title>About - Sunshine Electronics</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Custom font for a clean, modern look */
@@ -18,76 +18,16 @@
         nav ul li a {
             @apply text-gray-700 hover:text-blue-600 transition-colors duration-200; /* Link styling */
         }
-        /* Hero section specific styling */
-        .hero {
-            @apply bg-gradient-to-r from-blue-600 to-purple-700 text-white py-24 md:py-36 lg:py-48 flex flex-col items-center justify-center text-center px-4 relative overflow-hidden;
-            min-height: calc(100vh - 120px); /* Adjust based on header/footer height for full viewport effect */
-            background-image: url('https://www.transparenttextures.com/patterns/cubes.png'); /* Subtle background pattern */
-            background-size: 100px; /* Adjust size of the pattern */
-            background-blend-mode: overlay; /* Blend mode for the pattern */
+        /* Ensure main content takes up available space and centers */
+        main {
+            @apply flex-grow flex items-center justify-center px-4 md:px-8 lg:px-16;
+            /* Make the main content section take up full available height */
+            min-height: calc(100vh - 120px); /* Adjust based on header/footer height */
         }
-        .hero::before {
-            content: '';
-            @apply absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-700 opacity-90; /* Overlay gradient for color */
-            z-index: 1; /* Ensure gradient is behind text but above pattern */
-        }
-
-        /* Styling for the integrated animated welcome text */
-        .hero-welcome-text {
-            font-size: 100px; /* Adjusted for larger screen hero section */
-            font-weight: bold;
-            color: #FFF; /* White text for contrast on gradient background */
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for depth */
-            font-family: Arial, sans-serif; /* Specific font family */
-            text-align: center;
-            animation: welcome 1s ease-in-out; /* Apply the welcome animation */
-            position: relative; /* Needed for z-index to work */
-            z-index: 10; /* Ensure it's above the overlay */
-            line-height: 1.1; /* Adjust line height for large text */
-
-            /* Responsive font size for the welcome text */
-            @media (max-width: 768px) {
-                font-size: 60px; /* Smaller on mobile */
-            }
-            @media (max-width: 480px) {
-                font-size: 40px; /* Even smaller on very small screens */
-            }
-        }
-
-        /* Keyframe for welcome animation */
-        @keyframes welcome {
-            from {
-                opacity: 0; /* Start completely transparent */
-                transform: scale(0.5); /* Start at half size */
-            }
-            to {
-                opacity: 1; /* End fully opaque */
-                transform: scale(1); /* End at full size */
-            }
-        }
-
-        /* Feature card styling */
-        .feature-card {
-            @apply bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out flex flex-col items-center text-center;
-        }
-        .feature-card h3 {
-            @apply text-xl font-semibold text-gray-800 mb-2;
-        }
-        .feature-card p {
-            @apply text-gray-600 text-base;
-        }
-        /* Product card styling (reused from products page) */
-        .product-card {
-            @apply bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out flex flex-col items-center text-center;
-        }
-        .product-card img {
-            @apply w-full h-48 object-cover rounded-md mb-4; /* Ensure images fill space and are responsive */
-        }
-        .product-card h3 {
-            @apply text-2xl font-semibold text-gray-900 mb-2;
-        }
-        .product-card p {
-            @apply text-gray-600 text-base;
+        /* Styling for the About Us section to fill the screen */
+        main section {
+            @apply bg-white p-8 md:p-12 lg:p-16 rounded-lg shadow-xl max-w-3xl text-center flex flex-col justify-center items-center;
+            min-height: calc(100vh - 200px); /* Adjust to ensure it fits within the viewport, accounting for header/footer and padding */
         }
     </style>
 </head>
@@ -98,59 +38,24 @@
         </a>
         <nav>
             <ul class="flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-8 text-lg font-medium">
-                <li><a href="index.html" class="text-blue-600 font-bold">Home</a></li> <li><a href="about.html">About</a></li>
-                <li><a href="products.html">Products</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="text-blue-600 font-bold">About</a></li> <li><a href="products.html">Products</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="flex-grow flex flex-col">
-        <section class="hero">
-            <h1 class="hero-welcome-text">Welcome to Sunshine Electronics</h1>
-        </section>
-
-        <section class="py-16 px-6 md:px-10 lg:px-16 bg-gray-100">
-            <h2 class="text-4xl font-extrabold text-center text-gray-900 mb-12">Why Choose Sunshine Electronics?</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <div class="feature-card">
-                    <svg class="w-16 h-16 text-blue-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                    <h3>Cutting-Edge Technology</h3>
-                    <p>Stay ahead with the latest innovations in smartphones, smart homes, and more.</p>
-                </div>
-                <div class="feature-card">
-                    <svg class="w-16 h-16 text-green-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.592 1M12 8V3m0 9v3m0-6h.01M12 12H9.5M12 12h2.5M12 7.5a2.5 2.5 0 100 5 2.5 2.5 0 000-5z"></path></svg>
-                    <h3>Unbeatable Value</h3>
-                    <p>Premium quality electronics at prices that fit your budget.</p>
-                </div>
-                <div class="feature-card">
-                    <svg class="w-16 h-16 text-purple-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
-                    <h3>Customer Satisfaction</h3>
-                    <p>Dedicated support and a seamless shopping experience from start to finish.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="py-16 px-6 md:px-10 lg:px-16 bg-white">
-            <h2 class="text-4xl font-extrabold text-center text-gray-900 mb-12">Featured Products</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <div class="product-card">
-                    <img src="https://placehold.co/400x300/F0F9FF/000000?text=Wireless+Earbuds" alt="Wireless Earbuds">
-                    <h3>Pro-Sound Wireless Earbuds</h3>
-                    <p>Immersive audio experience with noise cancellation and long-lasting battery. Perfect for music lovers on the go.</p>
-                </div>
-                <div class="product-card">
-                    <img src="https://placehold.co/400x300/E0F2F7/000000?text=Smartwatch" alt="Smartwatch">
-                    <h3>AuraFit Smartwatch</h3>
-                    <p>Track your fitness, monitor your health, and stay connected with notifications right on your wrist.</p>
-                </div>
-                <div class="product-card">
-                    <img src="https://placehold.co/400x300/F0F9FF/000000?text=Portable+Speaker" alt="Portable Speaker">
-                    <h3>SonicBoom Portable Speaker</h3>
-                    <p>Powerful sound in a compact design. Take your music anywhere with this durable, waterproof Bluetooth speaker.</p>
-                </div>
-            </div>
+    <main>
+        <section>
+            <h2 class="text-5xl font-extrabold text-gray-900 mb-6 leading-tight">About Us</h2>
+            <p class="text-xl text-gray-700 leading-relaxed">
+                At **Sunshine Electronics**, we are passionate about bringing the future of technology to your fingertips.
+                We offer a wide selection of premium electronics, meticulously curated to enhance your daily life.
+                From cutting-edge smartphones that keep you connected, to innovative smart home devices that simplify your living,
+                we are dedicated to empowering you with the latest advancements. Our mission is to seamlessly integrate
+                technology into your world, making it more intuitive, efficient, and enjoyable.
+            </p>
         </section>
     </main>
 
