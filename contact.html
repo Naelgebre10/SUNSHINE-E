@@ -14,160 +14,61 @@
       background-size: 150px;
       background-blend-mode: overlay;
       min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
-    }
-
-    section {
-      @apply max-w-5xl w-full bg-white p-10 md:p-16 rounded-3xl shadow-3xl;
-      border: 1px solid rgba(0, 0, 0, 0.05);
-      animation: fadeInScale 1s ease-out forwards;
-    }
-
-    .business-form,
-    .support-form {
-      @apply p-8 rounded-xl shadow-lg mb-10;
-      animation: slideUp 0.8s ease-out;
-    }
-
-    .business-form {
-      @apply border-4 border-yellow-500 bg-yellow-50;
-    }
-
-    .support-form {
-      @apply border-4 border-blue-600 border-dashed bg-blue-50;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    textarea,
-    select {
-      @apply w-full p-5 text-xl border border-gray-300 rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-500 focus:border-transparent transition-all duration-300;
-    }
-
-    button[type="submit"] {
-      @apply w-full py-5 px-10 text-white text-3xl font-extrabold rounded-2xl shadow-2xl transition duration-300 ease-in-out transform hover:scale-110;
-      background-image: linear-gradient(to right, #3b82f6, #facc15);
-      border: 2px solid #ffffff;
-      position: relative;
-      overflow: hidden;
-      animation: pulse 2s infinite ease-in-out;
-    }
-
-    button[type="submit"]:hover {
-      box-shadow: 0 0 20px rgba(59, 130, 246, 0.7), 0 0 40px rgba(250, 204, 21, 0.5);
-      background-image: linear-gradient(to right, #2563eb, #eab308);
-    }
-
-    button[type="submit"]::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-      transition: 0.5s;
-    }
-
-    button[type="submit"]:hover::after {
-      left: 100%;
-    }
-
-    h2 {
-      @apply text-6xl md:text-7xl font-black text-center mb-10 bg-gradient-to-r from-blue-700 to-yellow-400 bg-clip-text text-transparent drop-shadow-lg;
-    }
-
-    h3 {
-      @apply text-5xl md:text-6xl font-extrabold text-blue-700 mb-8 border-b-4 border-blue-600 pb-3;
-    }
-
-    p {
-      @apply text-2xl text-gray-800 mb-12 text-center font-medium;
-    }
-
-    label {
-      @apply text-xl text-gray-800 font-semibold;
-    }
-
-    hr {
-      @apply border-t border-gray-300 my-16;
-    }
-
-    @keyframes fadeInScale {
-      from {
-        opacity: 0;
-        transform: translateY(30px) scale(0.95);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
-    }
-
-    @keyframes slideUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
     }
 
     @keyframes pulse {
-      0% {
-        transform: scale(1);
-        box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
-      }
-      50% {
-        transform: scale(1.02);
-        box-shadow: 0 0 15px rgba(59, 130, 246, 0.6);
-      }
-      100% {
-        transform: scale(1);
-        box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
-      }
+      0% { transform: scale(1); box-shadow: 0 0 10px rgba(59, 130, 246, 0.4); }
+      50% { transform: scale(1.02); box-shadow: 0 0 15px rgba(59, 130, 246, 0.6); }
+      100% { transform: scale(1); box-shadow: 0 0 10px rgba(59, 130, 246, 0.4); }
     }
   </style>
 </head>
+<body class="p-6 md:p-10 lg:p-16 flex items-center justify-center">
+  <section class="max-w-5xl w-full bg-white p-10 md:p-16 rounded-3xl shadow-2xl border border-gray-200">
+    <h2 class="text-6xl md:text-7xl font-black text-center mb-10 bg-gradient-to-r from-blue-700 to-yellow-400 bg-clip-text text-transparent drop-shadow-lg">
+      Get in Touch
+    </h2>
+    <p class="text-2xl text-gray-800 mb-12 text-center font-medium">
+      We'd love to hear from you. Please complete the appropriate form below.
+    </p>
 
-<body class="p-6 md:p-10 lg:p-16">
-  <section>
-    <h2>Get in Touch</h2>
-    <p>We'd love to hear from you. Please complete the appropriate form below.</p>
-
-    <h3>Business Inquiry</h3>
-    <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST" class="business-form space-y-8">
+    <!-- Business Inquiry Form -->
+    <h3 class="text-5xl md:text-6xl font-extrabold text-yellow-700 mb-8 border-b-4 border-yellow-500 pb-3 text-center">
+      Business Inquiry
+    </h3>
+    <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST"
+      class="space-y-8 p-8 rounded-xl shadow-lg mb-10 border-4 border-yellow-500 bg-yellow-50">
       <input type="hidden" name="oid" value="00DWU00000O3VHJ" />
       <input type="hidden" name="retURL" value="https://sites.google.com/view/thankyoupagesunshine/home" />
 
       <div>
-        <label for="first_name">First Name</label>
-        <input type="text" id="first_name" name="first_name" placeholder="John" required />
+        <label for="first_name" class="text-xl text-gray-800 font-semibold">First Name</label>
+        <input type="text" id="first_name" name="first_name" placeholder="John" required
+          class="w-full p-5 text-xl border border-gray-300 rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-500" />
       </div>
 
       <div>
-        <label for="last_name">Last Name</label>
-        <input type="text" id="last_name" name="last_name" placeholder="Doe" required />
+        <label for="last_name" class="text-xl text-gray-800 font-semibold">Last Name</label>
+        <input type="text" id="last_name" name="last_name" placeholder="Doe" required
+          class="w-full p-5 text-xl border border-gray-300 rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-500" />
       </div>
 
       <div>
-        <label for="email_lead">Email Address</label>
-        <input type="email" id="email_lead" name="email" placeholder="john.doe@example.com" required />
+        <label for="email_lead" class="text-xl text-gray-800 font-semibold">Email Address</label>
+        <input type="email" id="email_lead" name="email" placeholder="john.doe@example.com" required
+          class="w-full p-5 text-xl border border-gray-300 rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-500" />
       </div>
 
       <div>
-        <label for="company">Company Name</label>
-        <input type="text" id="company" name="company" placeholder="Acme Corp" required />
+        <label for="company" class="text-xl text-gray-800 font-semibold">Company Name</label>
+        <input type="text" id="company" name="company" placeholder="Acme Corp" required
+          class="w-full p-5 text-xl border border-gray-300 rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-500" />
       </div>
 
       <div>
-        <label for="lead_status">Lead Status</label>
-        <select id="lead_status" name="lead_status" required>
+        <label for="lead_status" class="text-xl text-gray-800 font-semibold">Lead Status</label>
+        <select id="lead_status" name="lead_status" required
+          class="w-full p-5 text-xl border border-gray-300 rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-500">
           <option value="">Select Lead Status</option>
           <option value="New">New</option>
           <option value="Working">Working</option>
@@ -177,38 +78,51 @@
       </div>
 
       <div>
-        <label for="description_lead">Tell us more about your needs</label>
-        <textarea id="description_lead" name="description" rows="6" placeholder="I'm interested in..." required></textarea>
+        <label for="description_lead" class="text-xl text-gray-800 font-semibold">Tell us more about your needs</label>
+        <textarea id="description_lead" name="description" rows="6" placeholder="I'm interested in..." required
+          class="w-full p-5 text-xl border border-gray-300 rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-500"></textarea>
       </div>
 
-      <button type="submit">Submit Inquiry</button>
+      <button type="submit"
+        class="w-full py-5 px-10 text-white text-3xl font-extrabold rounded-2xl shadow-2xl transition duration-300 ease-in-out transform hover:scale-110"
+        style="background-image: linear-gradient(to right, #3b82f6, #facc15); border: 2px solid #ffffff; animation: pulse 2s infinite ease-in-out;">
+        Submit Inquiry
+      </button>
     </form>
 
-    <hr />
+    <hr class="border-t border-gray-300 my-16" />
 
-    <h3>Customer Support</h3>
-    <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DWU00000O3VHJ" method="POST" class="support-form space-y-8">
+    <!-- Customer Support Form -->
+    <h3 class="text-5xl md:text-6xl font-extrabold text-blue-700 mb-8 border-b-4 border-blue-600 pb-3 text-center">
+      Customer Support
+    </h3>
+    <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DWU00000O3VHJ" method="POST"
+      class="space-y-8 p-8 rounded-xl shadow-lg mb-10 border-4 border-blue-600 border-dashed bg-blue-50">
       <input type="hidden" name="orgid" value="00DWU00000O3VHJ" />
       <input type="hidden" name="retURL" value="https://sites.google.com/view/thankyoupagesunshine/home" />
 
       <div>
-        <label for="Contact_name_case">Contact Name</label>
-        <input type="text" id="Contact_name_case" name="name" placeholder="Jane Doe" required />
+        <label for="Contact_name_case" class="text-xl text-gray-800 font-semibold">Contact Name</label>
+        <input type="text" id="Contact_name_case" name="name" placeholder="Jane Doe" required
+          class="w-full p-5 text-xl border border-gray-300 rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-500" />
       </div>
 
       <div>
-        <label for="email_case">Email Address</label>
-        <input type="email" id="email_case" name="email" placeholder="jane.doe@example.com" required />
+        <label for="email_case" class="text-xl text-gray-800 font-semibold">Email Address</label>
+        <input type="email" id="email_case" name="email" placeholder="jane.doe@example.com" required
+          class="w-full p-5 text-xl border border-gray-300 rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-500" />
       </div>
 
       <div>
-        <label for="subject_case">Support Subject</label>
-        <input type="text" id="subject_case" name="subject" placeholder="Issue with product X" required />
+        <label for="subject_case" class="text-xl text-gray-800 font-semibold">Support Subject</label>
+        <input type="text" id="subject_case" name="subject" placeholder="Issue with product X" required
+          class="w-full p-5 text-xl border border-gray-300 rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-500" />
       </div>
 
       <div>
-        <label for="origin_case">Case Origin</label>
-        <select id="origin_case" name="origin" required>
+        <label for="origin_case" class="text-xl text-gray-800 font-semibold">Case Origin</label>
+        <select id="origin_case" name="origin" required
+          class="w-full p-5 text-xl border border-gray-300 rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-500">
           <option value="">Select Case Origin</option>
           <option value="Phone">Phone</option>
           <option value="Email">Email</option>
@@ -217,8 +131,9 @@
       </div>
 
       <div>
-        <label for="status_case">Case Status</label>
-        <select id="status_case" name="status" required>
+        <label for="status_case" class="text-xl text-gray-800 font-semibold">Case Status</label>
+        <select id="status_case" name="status" required
+          class="w-full p-5 text-xl border border-gray-300 rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-500">
           <option value="">Select Case Status</option>
           <option value="New">New</option>
           <option value="Working">Working</option>
@@ -227,8 +142,9 @@
       </div>
 
       <div>
-        <label for="priority_case">Severity</label>
-        <select id="priority_case" name="priority" required>
+        <label for="priority_case" class="text-xl text-gray-800 font-semibold">Severity</label>
+        <select id="priority_case" name="priority" required
+          class="w-full p-5 text-xl border border-gray-300 rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-500">
           <option value="">Select Severity</option>
           <option value="High">High</option>
           <option value="Medium">Medium</option>
@@ -237,11 +153,16 @@
       </div>
 
       <div>
-        <label for="description_case">Please describe the issue in detail</label>
-        <textarea id="description_case" name="description" rows="6" placeholder="My product is not working as expected..." required></textarea>
+        <label for="description_case" class="text-xl text-gray-800 font-semibold">Please describe the issue in detail</label>
+        <textarea id="description_case" name="description" rows="6" placeholder="My product is not working as expected..." required
+          class="w-full p-5 text-xl border border-gray-300 rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-500"></textarea>
       </div>
 
-      <button type="submit">Submit Request</button>
+      <button type="submit"
+        class="w-full py-5 px-10 text-white text-3xl font-extrabold rounded-2xl shadow-2xl transition duration-300 ease-in-out transform hover:scale-110"
+        style="background-image: linear-gradient(to right, #3b82f6, #facc15); border: 2px solid #ffffff; animation: pulse 2s infinite ease-in-out;">
+        Submit Request
+      </button>
     </form>
   </section>
 </body>
