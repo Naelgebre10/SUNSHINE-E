@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Get in Touch - Sunshine Electronics</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet"/>
   <style>
     body {
       font-family: 'Inter', sans-serif;
@@ -13,7 +13,6 @@
       background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
       background-size: 150px;
       background-blend-mode: overlay;
-      background-opacity: 0.3;
       color: #1a202c;
       line-height: 1.6;
       min-height: 100vh;
@@ -22,30 +21,25 @@
       justify-content: center;
       padding: 2rem;
     }
-
     section {
       @apply max-w-5xl w-full bg-white p-10 md:p-16 rounded-3xl shadow-3xl relative overflow-hidden;
       border: 1px solid rgba(0, 0, 0, 0.05);
       animation: fadeInScale 1s ease-out forwards;
     }
-
     .business-form {
       @apply p-8 rounded-xl shadow-lg border-4 border-yellow-500 bg-yellow-50 mb-10;
       animation: slideUp 0.8s ease-out;
     }
-
     .support-form {
       @apply p-8 rounded-xl shadow-lg border-4 border-blue-600 border-dashed bg-blue-50 mb-10;
       animation: slideUp 0.8s ease-out;
     }
-
     input[type="text"],
     input[type="email"],
     textarea,
     select {
       @apply w-full p-4 text-lg border border-gray-300 rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-500 focus:border-transparent transition-all duration-300;
     }
-
     button[type="submit"] {
       @apply w-full py-5 px-10 bg-blue-600 text-white text-2xl font-extrabold rounded-2xl shadow-2xl transition duration-300 ease-in-out transform hover:scale-110;
       background-image: linear-gradient(to right, #3b82f6, #facc15);
@@ -54,12 +48,10 @@
       overflow: hidden;
       animation: pulse 2s infinite ease-in-out;
     }
-
     button[type="submit"]:hover {
       box-shadow: 0 0 20px rgba(59, 130, 246, 0.7), 0 0 40px rgba(250, 204, 21, 0.5);
       background-image: linear-gradient(to right, #2563eb, #eab308);
     }
-
     button[type="submit"]::after {
       content: '';
       position: absolute;
@@ -70,42 +62,31 @@
       background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
       transition: 0.5s;
     }
-
     button[type="submit"]:hover::after {
       left: 100%;
     }
-
     hr {
       @apply border-t border-gray-200 my-12;
     }
-
     h2 {
-      @apply text-8xl md:text-9xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-yellow-500 mb-10 text-center;
+      @apply text-8xl md:text-9xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-yellow-500 mb-10;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     }
-
     h3 {
-      @apply text-6xl md:text-7xl font-extrabold mb-10 text-center pb-4;
+      @apply text-6xl font-extrabold mb-8 pb-3;
     }
-
-    .business-heading {
-      color: #ca8a04; /* Yellow-600 */
-      border-bottom: 4px solid #facc15; /* Yellow-400 */
+    h3.business-title {
+      color: #d97706; /* Amber */
     }
-
-    .support-heading {
-      color: #1e3a8a; /* Blue-800 */
-      border-bottom: 4px solid #3b82f6; /* Blue-500 */
+    h3.support-title {
+      color: #2563eb; /* Blue */
     }
-
     p {
-      @apply text-xl text-gray-800 mb-12 text-center;
+      @apply text-xl text-gray-800 mb-12;
     }
-
     label {
       @apply text-lg text-gray-800 font-semibold;
     }
-
     @keyframes fadeInScale {
       from {
         opacity: 0;
@@ -116,7 +97,6 @@
         transform: translateY(0) scale(1);
       }
     }
-
     @keyframes slideUp {
       from {
         opacity: 0;
@@ -127,7 +107,6 @@
         transform: translateY(0);
       }
     }
-
     @keyframes pulse {
       0% {
         transform: scale(1);
@@ -146,37 +125,36 @@
 </head>
 <body class="p-6 md:p-10 lg:p-16">
   <section>
-    <h2>Get in Touch</h2>
-    <p>We'd love to hear from you. Please complete the appropriate form below.</p>
+    <h2 class="text-center">Get in Touch</h2>
+    <p class="text-center">We'd love to hear from you. Please complete the appropriate form below.</p>
 
-    <!-- Business Inquiry -->
-    <h3 class="business-heading">Business Inquiry</h3>
+    <h3 class="business-title">Business Inquiry</h3>
     <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST" class="business-form space-y-8">
       <input type="hidden" name="oid" value="00DWU00000O3VHJ" />
       <input type="hidden" name="retURL" value="https://sites.google.com/view/thankyoupagesunshine/home" />
 
       <div>
-        <label for="first_name">First Name</label>
+        <label for="first_name" class="block mb-2">First Name</label>
         <input type="text" id="first_name" name="first_name" placeholder="John" required />
       </div>
 
       <div>
-        <label for="last_name">Last Name</label>
+        <label for="last_name" class="block mb-2">Last Name</label>
         <input type="text" id="last_name" name="last_name" placeholder="Doe" required />
       </div>
 
       <div>
-        <label for="email_lead">Email Address</label>
+        <label for="email_lead" class="block mb-2">Email Address</label>
         <input type="email" id="email_lead" name="email" placeholder="john.doe@example.com" required />
       </div>
 
       <div>
-        <label for="company">Company Name</label>
+        <label for="company" class="block mb-2">Company Name</label>
         <input type="text" id="company" name="company" placeholder="Acme Corp" required />
       </div>
 
       <div>
-        <label for="lead_status">Lead Status</label>
+        <label for="lead_status" class="block mb-2">Lead Status</label>
         <select id="lead_status" name="lead_status" required>
           <option value="">Select Lead Status</option>
           <option value="New">New</option>
@@ -187,7 +165,7 @@
       </div>
 
       <div>
-        <label for="description_lead">Tell us more about your needs</label>
+        <label for="description_lead" class="block mb-2">Tell us more about your needs</label>
         <textarea id="description_lead" name="description" rows="6" placeholder="I'm interested in..." required></textarea>
       </div>
 
@@ -196,29 +174,28 @@
 
     <hr />
 
-    <!-- Customer Support -->
-    <h3 class="support-heading">Customer Support</h3>
+    <h3 class="support-title">Customer Support</h3>
     <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DWU00000O3VHJ" method="POST" class="support-form space-y-8">
       <input type="hidden" name="orgid" value="00DWU00000O3VHJ" />
       <input type="hidden" name="retURL" value="https://sites.google.com/view/thankyoupagesunshine/home" />
 
       <div>
-        <label for="full_name_case">Contact Name</label>
+        <label for="full_name_case" class="block mb-2">Contact Name</label>
         <input type="text" id="full_name_case" name="name" placeholder="Jane Doe" required />
       </div>
 
       <div>
-        <label for="email_case">Email Address</label>
+        <label for="email_case" class="block mb-2">Email Address</label>
         <input type="email" id="email_case" name="email" placeholder="jane.doe@example.com" required />
       </div>
 
       <div>
-        <label for="subject_case">Support Subject</label>
+        <label for="subject_case" class="block mb-2">Support Subject</label>
         <input type="text" id="subject_case" name="subject" placeholder="Issue with product X" required />
       </div>
 
       <div>
-        <label for="origin_case">Case Origin</label>
+        <label for="origin_case" class="block mb-2">Case Origin</label>
         <select id="origin_case" name="origin" required>
           <option value="">Select Case Origin</option>
           <option value="Phone">Phone</option>
@@ -228,7 +205,7 @@
       </div>
 
       <div>
-        <label for="status_case">Case Status</label>
+        <label for="status_case" class="block mb-2">Case Status</label>
         <select id="status_case" name="status" required>
           <option value="">Select Case Status</option>
           <option value="New">New</option>
@@ -238,7 +215,7 @@
       </div>
 
       <div>
-        <label for="priority_case">Severity</label>
+        <label for="priority_case" class="block mb-2">Severity</label>
         <select id="priority_case" name="priority" required>
           <option value="">Select Severity</option>
           <option value="High">High</option>
@@ -248,7 +225,7 @@
       </div>
 
       <div>
-        <label for="description_case">Please describe the issue in detail</label>
+        <label for="description_case" class="block mb-2">Please describe the issue in detail</label>
         <textarea id="description_case" name="description" rows="6" placeholder="My product is not working as expected..." required></textarea>
       </div>
 
@@ -257,4 +234,3 @@
   </section>
 </body>
 </html>
-
