@@ -26,8 +26,12 @@
         }
         /* Styling for the About Us section to fill the screen */
         main section {
-            @apply bg-white p-8 md:p-12 lg:p-16 rounded-lg shadow-xl max-w-3xl text-center flex flex-col justify-center items-center;
+            @apply bg-white p-8 md:p-12 lg:p-16 rounded-lg shadow-xl text-center flex flex-col justify-center items-center w-full;
             min-height: calc(100vh - 200px); /* Adjust to ensure it fits within the viewport, accounting for header/footer and padding */
+        }
+        /* Removed max-w-4xl from the paragraph to allow it to expand more */
+        main section p {
+            @apply mx-auto; /* Keeps it centered, but allows full section width */
         }
     </style>
 </head>
