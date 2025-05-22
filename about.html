@@ -20,7 +20,14 @@
         }
         /* Ensure main content takes up available space and centers */
         main {
-            @apply flex-grow flex items-center justify-center py-16 px-4 md:px-8 lg:px-16;
+            @apply flex-grow flex items-center justify-center px-4 md:px-8 lg:px-16;
+            /* Make the main content section take up full available height */
+            min-height: calc(100vh - 120px); /* Adjust based on header/footer height */
+        }
+        /* Styling for the About Us section to fill the screen */
+        main section {
+            @apply bg-white p-8 md:p-12 lg:p-16 rounded-lg shadow-xl max-w-3xl text-center flex flex-col justify-center items-center;
+            min-height: calc(100vh - 200px); /* Adjust to ensure it fits within the viewport, accounting for header/footer and padding */
         }
     </style>
 </head>
@@ -40,7 +47,7 @@
     </header>
 
     <main>
-        <section class="bg-white p-8 md:p-12 lg:p-16 rounded-lg shadow-xl max-w-3xl text-center">
+        <section>
             <h2 class="text-5xl font-extrabold text-gray-900 mb-6 leading-tight">About Us</h2>
             <p class="text-xl text-gray-700 leading-relaxed">
                 At **Sunshine Electronics**, we are passionate about bringing the future of technology to your fingertips.
@@ -57,3 +64,4 @@
     </footer>
 </body>
 </html>
+
