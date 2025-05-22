@@ -1,48 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Products - Sunshine Electronics</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Products - Sunshine Electronics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom font for a clean, modern look */
+        body {
+            font-family: 'Inter', sans-serif;
+            @apply bg-gray-50 text-gray-800; /* Light background, dark text */
+        }
+        /* Custom styles for specific elements if needed, though Tailwind handles most */
+        .logo {
+            @apply h-10 md:h-12; /* Responsive height for the logo */
+        }
+        nav ul li a {
+            @apply text-gray-700 hover:text-blue-600 transition-colors duration-200; /* Link styling */
+        }
+        /* Product card specific styling */
+        .product-card {
+            @apply bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out flex flex-col items-center text-center;
+        }
+        .product-card img {
+            @apply w-full h-48 object-cover rounded-md mb-4; /* Ensure images fill space and are responsive */
+        }
+        .product-card h3 {
+            @apply text-2xl font-semibold text-gray-900 mb-2;
+        }
+        .product-card p {
+            @apply text-gray-600 text-base;
+        }
+    </style>
 </head>
-<body>
-  <header>
-    <img src="assets/logo.png" alt="Sunshine Electronics Logo" class="logo" />
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-      <section>
-        <h2>Popular Products</h2>
-        <div class="products-grid">
-          <div class="product-card">
-            <img src="assets/iphone.jpg" alt="iPhone">
-            <h3>iPhone 14 Pro</h3>
-            <p>Latest Apple technology with ProMotion display and 48MP camera.</p>
-          </div>
-          <div class="product-card">
-            <img src="assets/samsung.jpg" alt="Samsung TV">
-            <h3>Samsung 55" Smart TV</h3>
-            <p>Ultra HD 4K with voice control and streaming apps.</p>
-          </div>
-          <div class="product-card">
-            <img src="assets/laptop.jpg" alt="Laptop">
-            <h3>Dell XPS 13</h3>
-            <p>Powerful performance in a slim and sleek laptop design.</p>
-          </div>
-        </div>
-      </section>
+<body class="min-h-screen flex flex-col">
+    <header class="bg-white shadow-md py-4 px-6 md:px-10 lg:px-16 flex flex-col md:flex-row items-center justify-between">
+        <a href="index.html" class="mb-4 md:mb-0">
+            <img src="WhatsApp Image 2025-05-18 at 14.04.13_dbe65209.jpg" alt="Sunshine Electronics Logo" class="logo" />
+        </a>
+        <nav>
+            <ul class="flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-8 text-lg font-medium">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="products.html" class="text-blue-600 font-bold">Products</a></li> <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="flex-grow py-16 px-6 md:px-10 lg:px-16">
+        <section class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-extrabold text-center text-gray-900 mb-12">Popular Products</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="product-card">
+                    <img src="https://placehold.co/400x300/E0F2F7/000000?text=iPhone+14+Pro" alt="iPhone 14 Pro">
+                    <h3>iPhone 14 Pro</h3>
+                    <p>Experience the latest Apple technology with a stunning ProMotion display and a powerful 48MP camera system. Capture breathtaking photos and videos, enjoy lightning-fast performance, and immerse yourself in a truly intuitive user experience.</p>
+                </div>
+                <div class="product-card">
+                    <img src="https://placehold.co/400x300/E0F2F7/000000?text=Samsung+55+Smart+TV" alt="Samsung 55 inch Smart TV">
+                    <h3>Samsung 55" Smart TV</h3>
+                    <p>Immerse yourself in stunning Ultra HD 4K resolution with vibrant colors and incredible detail. This smart TV comes with built-in voice control and access to all your favorite streaming apps, bringing endless entertainment to your living room.</p>
+                </div>
+                <div class="product-card">
+                    <img src="https://placehold.co/400x300/E0F2F7/000000?text=Dell+XPS+13" alt="Dell XPS 13 Laptop">
+                    <h3>Dell XPS 13</h3>
+                    <p>Unleash powerful performance in a remarkably slim and sleek laptop design. Perfect for productivity and creativity on the go, the Dell XPS 13 offers a vibrant display, long-lasting battery life, and a premium computing experience.</p>
+                </div>
+                </div>
+        </section>
     </main>
-  <footer>
-    <p>&copy; 2025 Sunshine Electronics. Empowering Technology.</p>
-  </footer>
+
+    <footer class="bg-gray-800 text-white py-6 px-6 md:px-10 lg:px-16 text-center">
+        <p class="text-sm">&copy; 2025 Sunshine Electronics. Empowering Technology.</p>
+    </footer>
 </body>
 </html>
