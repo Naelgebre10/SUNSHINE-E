@@ -3,64 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get in Touch - Salesforce Forms</title>
+    <title>Get in Touch - Sunshine Electronics</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
-        /* Custom font for a clean look */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6; /* Light gray background */
-            color: #374151; /* Dark gray text */
+            background: linear-gradient(to bottom right, #ffcc00, #f0f9ff); /* Vibrant yellow to light blue gradient */
+            background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+            background-size: 150px;
+            background-blend-mode: overlay;
+            background-opacity: 0.3; /* Subtle pattern */
+            color: #1a202c;
             line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
         }
-        /* Basic styling for form elements to ensure consistency */
+        section {
+            @apply max-w-5xl w-full bg-white p-10 md:p-16 rounded-3xl shadow-3xl relative overflow-hidden;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transform: translateY(0);
+            animation: fadeInScale 1s ease-out forwards;
+        }
+        form {
+            @apply bg-gray-50 p-8 rounded-xl shadow-lg border-4 border-blue-600 mb-10;
+            animation: slideUp 0.8s ease-out;
+        }
         input[type="text"],
         input[type="email"],
         textarea,
         select {
-            @apply w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500;
+            @apply w-full p-4 text-lg border border-gray-300 rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-500 focus:border-transparent transition-all duration-300;
         }
         button[type="submit"] {
-            @apply w-full py-3 px-6 bg-blue-600 text-white font-semibold rounded-md shadow-md hover:bg-blue-700 transition duration-300 ease-in-out;
+            @apply w-full py-4 px-8 bg-blue-600 text-white text-xl font-bold rounded-xl shadow-xl hover:bg-blue-700 transition duration-300 ease-in-out transform hover:scale-110;
+            background-image: linear-gradient(to right, #3b82f6, #6366f1);
+            border: none;
         }
-        /* Style for the horizontal rule */
         hr {
-            @apply border-t border-gray-300 my-10;
+            @apply border-t border-gray-200 my-12;
+        }
+        h2 {
+            @apply text-6xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-yellow-500 mb-8;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        h3 {
+            @apply text-3xl font-bold text-blue-700 mb-8 border-b-4 border-blue-600 pb-3;
+        }
+        p {
+            @apply text-xl text-gray-800 mb-12;
+        }
+        label {
+            @apply text-lg text-gray-800 font-semibold;
+        }
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
 <body class="p-6 md:p-10 lg:p-16">
-    <section class="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-lg shadow-xl">
-        <h2 class="text-4xl font-extrabold text-center text-gray-800 mb-4">Get in Touch</h2>
-        <p class="text-center text-lg text-gray-600 mb-10">We'd love to hear from you. Please complete the appropriate form below.</p>
+    <section>
+        <h2 class="text-center">Get in Touch</h2>
+        <p class="text-center">We'd love to hear from you. Please complete the appropriate form below.</p>
 
-        <h3 class="text-3xl font-bold text-gray-700 mb-6 border-b-2 border-blue-500 pb-2">Business Inquiry</h3>
-        <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST" class="space-y-6">
+        <h3>Business Inquiry</h3>
+        <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST" class="space-y-8">
             <input type="hidden" name="oid" value="00DWU00000O3VHJ" />
             <input type="hidden" name="retURL" value="https://sites.google.com/view/thankyoupagesunshine/home" />
 
             <div>
-                <label for="first_name" class="block text-sm font-medium text-gray-700 mb-1">First Name</label>
+                <label for="first_name" class="block mb-2">First Name</label>
                 <input type="text" id="first_name" name="first_name" placeholder="John" required />
             </div>
 
             <div>
-                <label for="last_name" class="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
+                <label for="last_name" class="block mb-2">Last Name</label>
                 <input type="text" id="last_name" name="last_name" placeholder="Doe" required />
             </div>
 
             <div>
-                <label for="email_lead" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                <label for="email_lead" class="block mb-2">Email Address</label>
                 <input type="email" id="email_lead" name="email" placeholder="john.doe@example.com" required />
             </div>
 
             <div>
-                <label for="company" class="block text-sm font-medium text-gray-700 mb-1">Company Name</label>
+                <label for="company" class="block mb-2">Company Name</label>
                 <input type="text" id="company" name="company" placeholder="Acme Corp" required />
             </div>
 
             <div>
-                <label for="lead_status" class="block text-sm font-medium text-gray-700 mb-1">Lead Status</label>
+                <label for="lead_status" class="block mb-2">Lead Status</label>
                 <select id="lead_status" name="lead_status" required>
                     <option value="">Select Lead Status</option>
                     <option value="New">New</option>
@@ -71,8 +123,8 @@
             </div>
 
             <div>
-                <label for="description_lead" class="block text-sm font-medium text-gray-700 mb-1">Tell us more about your needs</label>
-                <textarea id="description_lead" name="description" rows="5" placeholder="I'm interested in..." required></textarea>
+                <label for="description_lead" class="block mb-2">Tell us more about your needs</label>
+                <textarea id="description_lead" name="description" rows="6" placeholder="I'm interested in..." required></textarea>
             </div>
 
             <button type="submit">Submit Inquiry</button>
@@ -80,30 +132,28 @@
 
         <hr />
 
-        <h3 class="text-3xl font-bold text-gray-700 mb-6 border-b-2 border-blue-500 pb-2">Customer Support</h3>
-        <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DWU00000O3VHJ" method="POST" class="space-y-6">
+        <h3>Customer Support</h3>
+        <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DWU00000O3VHJ" method="POST" class="space-y-8">
             <input type="hidden" name="orgid" value="00DWU00000O3VHJ" />
             <input type="hidden" name="retURL" value="https://sites.google.com/view/thankyoupagesunshine/home" />
-            <!--
-                IMPORTANT: The 'action' URL above has been updated with your specific Salesforce instance URL.
-            -->
+            
             <div>
-                <label for="full_name_case" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                <label for="full_name_case" class="block mb-2">Full Name</label>
                 <input type="text" id="full_name_case" name="name" placeholder="Jane Doe" required />
             </div>
 
             <div>
-                <label for="email_case" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                <label for="email_case" class="block mb-2">Email Address</label>
                 <input type="email" id="email_case" name="email" placeholder="jane.doe@example.com" required />
             </div>
 
             <div>
-                <label for="subject_case" class="block text-sm font-medium text-gray-700 mb-1">Support Subject</label>
+                <label for="subject_case" class="block mb-2">Support Subject</label>
                 <input type="text" id="subject_case" name="subject" placeholder="Issue with product X" required />
             </div>
 
             <div>
-                <label for="origin_case" class="block text-sm font-medium text-gray-700 mb-1">Case Origin</label>
+                <label for="origin_case" class="block mb-2">Case Origin</label>
                 <select id="origin_case" name="origin" required>
                     <option value="">Select Case Origin</option>
                     <option value="Phone">Phone</option>
@@ -113,7 +163,7 @@
             </div>
 
             <div>
-                <label for="status_case" class="block text-sm font-medium text-gray-700 mb-1">Case Status</label>
+                <label for="status_case" class="block mb-2">Case Status</label>
                 <select id="status_case" name="status" required>
                     <option value="">Select Case Status</option>
                     <option value="New">New</option>
@@ -123,7 +173,7 @@
             </div>
 
             <div>
-                <label for="priority_case" class="block text-sm font-medium text-gray-700 mb-1">Severity</label>
+                <label for="priority_case" class="block mb-2">Severity</label>
                 <select id="priority_case" name="priority" required>
                     <option value="">Select Severity</option>
                     <option value="High">High</option>
@@ -133,8 +183,8 @@
             </div>
 
             <div>
-                <label for="description_case" class="block text-sm font-medium text-gray-700 mb-1">Please describe the issue in detail</label>
-                <textarea id="description_case" name="description" rows="5" placeholder="My product is not working as expected..." required></textarea>
+                <label for="description_case" class="block mb-2">Please describe the issue in detail</label>
+                <textarea id="description_case" name="description" rows="6" placeholder="My product is not working as expected..." required></textarea>
             </div>
 
             <button type="submit">Submit Request</button>
