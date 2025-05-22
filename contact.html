@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Get in Touch - Sunshine Electronics</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Inter', sans-serif;
@@ -12,142 +13,236 @@
       background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
       background-size: 150px;
       background-blend-mode: overlay;
-      color: #1a202c;
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 2rem;
     }
-    h2 {
-      font-size: 4rem;
-      font-weight: 800;
-      background: linear-gradient(to right, #1d4ed8, #facc15);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-align: center;
-      margin-bottom: 1rem;
+
+    section {
+      @apply max-w-5xl w-full bg-white p-10 md:p-16 rounded-3xl shadow-3xl;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      animation: fadeInScale 1s ease-out forwards;
     }
-    h3 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      color: #1d4ed8;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-    }
-    .form-box {
-      border-radius: 1rem;
-      padding: 2rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    }
-    .business-form {
-      background-color: #fef9c3;
-      border: 4px solid #facc15;
-    }
+
+    .business-form,
     .support-form {
-      background-color: #dbeafe;
-      border: 4px dashed #3b82f6;
+      @apply p-8 rounded-xl shadow-lg mb-10;
+      animation: slideUp 0.8s ease-out;
     }
-    input, textarea, select {
-      @apply w-full p-3 border border-gray-300 rounded-lg mb-4 text-lg;
+
+    .business-form {
+      @apply border-4 border-yellow-500 bg-yellow-50;
     }
-    button {
-      @apply w-full py-3 text-white font-bold text-xl rounded-lg mt-4;
-      background: linear-gradient(to right, #3b82f6, #facc15);
-      transition: transform 0.2s ease;
+
+    .support-form {
+      @apply border-4 border-blue-600 border-dashed bg-blue-50;
     }
-    button:hover {
-      transform: scale(1.05);
+
+    input[type="text"],
+    input[type="email"],
+    textarea,
+    select {
+      @apply w-full p-5 text-xl border border-gray-300 rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-500 focus:border-transparent transition-all duration-300;
+    }
+
+    button[type="submit"] {
+      @apply w-full py-5 px-10 text-white text-3xl font-extrabold rounded-2xl shadow-2xl transition duration-300 ease-in-out transform hover:scale-110;
+      background-image: linear-gradient(to right, #3b82f6, #facc15);
+      border: 2px solid #ffffff;
+      position: relative;
+      overflow: hidden;
+      animation: pulse 2s infinite ease-in-out;
+    }
+
+    button[type="submit"]:hover {
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.7), 0 0 40px rgba(250, 204, 21, 0.5);
+      background-image: linear-gradient(to right, #2563eb, #eab308);
+    }
+
+    button[type="submit"]::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: 0.5s;
+    }
+
+    button[type="submit"]:hover::after {
+      left: 100%;
+    }
+
+    h2 {
+      @apply text-6xl md:text-7xl font-black text-center mb-10 bg-gradient-to-r from-blue-700 to-yellow-400 bg-clip-text text-transparent drop-shadow-lg;
+    }
+
+    h3 {
+      @apply text-5xl md:text-6xl font-extrabold text-blue-700 mb-8 border-b-4 border-blue-600 pb-3;
+    }
+
+    p {
+      @apply text-2xl text-gray-800 mb-12 text-center font-medium;
+    }
+
+    label {
+      @apply text-xl text-gray-800 font-semibold;
+    }
+
+    hr {
+      @apply border-t border-gray-300 my-16;
+    }
+
+    @keyframes fadeInScale {
+      from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
+      }
+      50% {
+        transform: scale(1.02);
+        box-shadow: 0 0 15px rgba(59, 130, 246, 0.6);
+      }
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
+      }
     }
   </style>
 </head>
-<body>
-  <div class="max-w-5xl w-full bg-white p-10 rounded-3xl shadow-xl">
+
+<body class="p-6 md:p-10 lg:p-16">
+  <section>
     <h2>Get in Touch</h2>
-    <p class="text-center text-xl mb-10">We'd love to hear from you. Please complete the appropriate form below.</p>
+    <p>We'd love to hear from you. Please complete the appropriate form below.</p>
 
-    <!-- Business Inquiry Form -->
-    <div class="form-box business-form">
-      <h3>Business Inquiry</h3>
-      <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
-        <input type="hidden" name="oid" value="00DWU00000O3VHJ" />
-        <input type="hidden" name="retURL" value="https://sites.google.com/view/thankyoupagesunshine/home" />
+    <h3>Business Inquiry</h3>
+    <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST" class="business-form space-y-8">
+      <input type="hidden" name="oid" value="00DWU00000O3VHJ" />
+      <input type="hidden" name="retURL" value="https://sites.google.com/view/thankyoupagesunshine/home" />
 
-        <label>First Name</label>
-        <input type="text" name="first_name" placeholder="John" required />
+      <div>
+        <label for="first_name">First Name</label>
+        <input type="text" id="first_name" name="first_name" placeholder="John" required />
+      </div>
 
-        <label>Last Name</label>
-        <input type="text" name="last_name" placeholder="Doe" required />
+      <div>
+        <label for="last_name">Last Name</label>
+        <input type="text" id="last_name" name="last_name" placeholder="Doe" required />
+      </div>
 
-        <label>Email Address</label>
-        <input type="email" name="email" placeholder="john.doe@example.com" required />
+      <div>
+        <label for="email_lead">Email Address</label>
+        <input type="email" id="email_lead" name="email" placeholder="john.doe@example.com" required />
+      </div>
 
-        <label>Company Name</label>
-        <input type="text" name="company" placeholder="Acme Corp" required />
+      <div>
+        <label for="company">Company Name</label>
+        <input type="text" id="company" name="company" placeholder="Acme Corp" required />
+      </div>
 
-        <label>Lead Status</label>
-        <select name="lead_status" required>
+      <div>
+        <label for="lead_status">Lead Status</label>
+        <select id="lead_status" name="lead_status" required>
           <option value="">Select Lead Status</option>
           <option value="New">New</option>
           <option value="Working">Working</option>
           <option value="Closed - Converted">Closed - Converted</option>
           <option value="Closed - Not Converted">Closed - Not Converted</option>
         </select>
+      </div>
 
-        <label>Tell us more about your needs</label>
-        <textarea name="description" rows="5" placeholder="I'm interested in..." required></textarea>
+      <div>
+        <label for="description_lead">Tell us more about your needs</label>
+        <textarea id="description_lead" name="description" rows="6" placeholder="I'm interested in..." required></textarea>
+      </div>
 
-        <button type="submit">Submit Inquiry</button>
-      </form>
-    </div>
+      <button type="submit">Submit Inquiry</button>
+    </form>
 
-    <!-- Customer Support Form -->
-    <div class="form-box support-form">
-      <h3>Customer Support</h3>
-      <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DWU00000O3VHJ" method="POST">
-        <input type="hidden" name="orgid" value="00DWU00000O3VHJ" />
-        <input type="hidden" name="retURL" value="https://sites.google.com/view/thankyoupagesunshine/home" />
+    <hr />
 
-        <label>Contact Name</label>
-        <input type="text" name="name" placeholder="Jane Doe" required />
+    <h3>Customer Support</h3>
+    <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DWU00000O3VHJ" method="POST" class="support-form space-y-8">
+      <input type="hidden" name="orgid" value="00DWU00000O3VHJ" />
+      <input type="hidden" name="retURL" value="https://sites.google.com/view/thankyoupagesunshine/home" />
 
-        <label>Email Address</label>
-        <input type="email" name="email" placeholder="jane.doe@example.com" required />
+      <div>
+        <label for="Contact_name_case">Contact Name</label>
+        <input type="text" id="Contact_name_case" name="name" placeholder="Jane Doe" required />
+      </div>
 
-        <label>Support Subject</label>
-        <input type="text" name="subject" placeholder="Issue with product X" required />
+      <div>
+        <label for="email_case">Email Address</label>
+        <input type="email" id="email_case" name="email" placeholder="jane.doe@example.com" required />
+      </div>
 
-        <label>Case Origin</label>
-        <select name="origin" required>
+      <div>
+        <label for="subject_case">Support Subject</label>
+        <input type="text" id="subject_case" name="subject" placeholder="Issue with product X" required />
+      </div>
+
+      <div>
+        <label for="origin_case">Case Origin</label>
+        <select id="origin_case" name="origin" required>
           <option value="">Select Case Origin</option>
           <option value="Phone">Phone</option>
           <option value="Email">Email</option>
           <option value="Web">Web</option>
         </select>
+      </div>
 
-        <label>Case Status</label>
-        <select name="status" required>
+      <div>
+        <label for="status_case">Case Status</label>
+        <select id="status_case" name="status" required>
           <option value="">Select Case Status</option>
           <option value="New">New</option>
           <option value="Working">Working</option>
           <option value="Closed">Closed</option>
         </select>
+      </div>
 
-        <label>Severity</label>
-        <select name="priority" required>
+      <div>
+        <label for="priority_case">Severity</label>
+        <select id="priority_case" name="priority" required>
           <option value="">Select Severity</option>
           <option value="High">High</option>
           <option value="Medium">Medium</option>
           <option value="Low">Low</option>
         </select>
+      </div>
 
-        <label>Please describe the issue in detail</label>
-        <textarea name="description" rows="5" placeholder="My product is not working as expected..." required></textarea>
+      <div>
+        <label for="description_case">Please describe the issue in detail</label>
+        <textarea id="description_case" name="description" rows="6" placeholder="My product is not working as expected..." required></textarea>
+      </div>
 
-        <button type="submit">Submit Request</button>
-      </form>
-    </div>
-  </div>
+      <button type="submit">Submit Request</button>
+    </form>
+  </section>
 </body>
 </html>
