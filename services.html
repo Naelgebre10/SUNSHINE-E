@@ -1,36 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Services - Sunshine Electronics</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Services - Sunshine Electronics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom font for a clean, modern look */
+        body {
+            font-family: 'Inter', sans-serif;
+            @apply bg-gray-50 text-gray-800; /* Light background, dark text */
+        }
+        /* Custom styles for specific elements if needed, though Tailwind handles most */
+        .logo {
+            @apply h-10 md:h-12; /* Responsive height for the logo */
+        }
+        nav ul li a {
+            @apply text-gray-700 hover:text-blue-600 transition-colors duration-200; /* Link styling */
+        }
+        /* Service list item styling */
+        .service-item {
+            @apply bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out;
+        }
+    </style>
 </head>
-<body>
-  <header>
-    <img src="assets/logo.png" alt="Sunshine Electronics Logo" class="logo" />
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-      <section>
-        <h2>Our Services</h2>
-        <ul>
-          <li>Professional tech support & repairs</li>
-          <li>Smart home consultations & installations</li>
-          <li>Business technology solutions</li>
-        </ul>
-      </section>
+<body class="min-h-screen flex flex-col">
+    <header class="bg-white shadow-md py-4 px-6 md:px-10 lg:px-16 flex flex-col md:flex-row items-center justify-between">
+        <a href="index.html" class="mb-4 md:mb-0">
+            <img src="WhatsApp Image 2025-05-18 at 14.04.13_dbe65209.jpg" alt="Sunshine Electronics Logo" class="logo" />
+        </a>
+        <nav>
+            <ul class="flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-8 text-lg font-medium">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="services.html" class="text-blue-600 font-bold">Services</a></li> <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="flex-grow py-16 px-6 md:px-10 lg:px-16">
+        <section class="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-lg shadow-xl text-center">
+            <h2 class="text-4xl font-extrabold text-gray-900 mb-6">Our Services</h2>
+            <p class="text-lg text-gray-700 mb-10 leading-relaxed">
+                At Sunshine Electronics, we're not just about selling products; we're about providing comprehensive solutions
+                and support to ensure your technology works seamlessly for you. Explore our range of expert services designed
+                to meet all your tech needs.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
+                <div class="service-item">
+                    <svg class="w-16 h-16 text-blue-500 mb-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.592 1M12 8V3m0 9v3m0-6h.01M12 12H9.5M12 12h2.5M12 7.5a2.5 2.5 0 100 5 2.5 2.5 0 000-5z"></path></svg>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-2 text-center">Professional Tech Support & Repairs</h3>
+                    <p class="text-gray-600">Our certified technicians provide fast, reliable diagnostics and repairs for all your electronic devices. From troubleshooting software glitches to replacing hardware, we ensure your tech is back up and running smoothly.</p>
+                </div>
+                <div class="service-item">
+                    <svg class="w-16 h-16 text-green-500 mb-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m0 0l-7 7m7-7v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001 1h3v-3m-6 0a1 1 0 011-1h3v-3"></path></svg>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-2 text-center">Smart Home Consultations & Installations</h3>
+                    <p class="text-gray-600">Transform your living space into a smart home. Our experts offer personalized consultations, helping you choose the right devices and providing seamless installation and setup for a fully integrated smart living experience.</p>
+                </div>
+                <div class="service-item">
+                    <svg class="w-16 h-16 text-purple-500 mb-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.55 23.55 0 0112 15c-1.638 0-3.232-.266-4.755-.745L3 20.255V4.745L7.245 3.745A23.55 23.55 0 0112 3c1.638 0 3.232.266 4.755.745L21 4.745V13.255z"></path></svg>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-2 text-center">Business Technology Solutions</h3>
+                    <p class="text-gray-600">Empower your business with robust technology solutions. We offer tailored services from network setup and cybersecurity to cloud integration, ensuring your operations are efficient, secure, and future-ready.</p>
+                </div>
+            </div>
+        </section>
     </main>
-  <footer>
-    <p>&copy; 2025 Sunshine Electronics. Empowering Technology.</p>
-  </footer>
+
+    <footer class="bg-gray-800 text-white py-6 px-6 md:px-10 lg:px-16 text-center">
+        <p class="text-sm">&copy; 2025 Sunshine Electronics. Empowering Technology.</p>
+    </footer>
 </body>
 </html>
