@@ -1,32 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Home - Sunshine Electronics</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Home - Sunshine Electronics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom font for a clean, modern look */
+        body {
+            font-family: 'Inter', sans-serif;
+            @apply bg-gray-50 text-gray-800; /* Light background, dark text */
+        }
+        /* Custom styles for specific elements if needed, though Tailwind handles most */
+        .logo {
+            @apply h-10 md:h-12; /* Responsive height for the logo */
+        }
+        nav ul li a {
+            @apply text-gray-700 hover:text-blue-600 transition-colors duration-200; /* Link styling */
+        }
+        /* Hero section specific styling */
+        .hero {
+            @apply bg-gradient-to-r from-blue-600 to-purple-700 text-white py-24 md:py-36 lg:py-48 flex flex-col items-center justify-center text-center px-4;
+            min-height: calc(100vh - 120px); /* Adjust based on header/footer height for full viewport effect */
+        }
+        .hero h1 {
+            @apply text-5xl md:text-6xl lg:text-7xl font-extrabold mb-5 leading-tight;
+        }
+        .hero p {
+            @apply text-lg md:text-xl lg:text-2xl opacity-90 max-w-3xl mb-8;
+        }
+        /* Feature card styling */
+        .feature-card {
+            @apply bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out flex flex-col items-center text-center;
+        }
+        .feature-card h3 {
+            @apply text-xl font-semibold text-gray-800 mb-2;
+        }
+        .feature-card p {
+            @apply text-gray-600 text-base;
+        }
+    </style>
 </head>
-<body>
-  <header>
-    <img src="assets/logo.png" alt="Sunshine Electronics Logo" class="logo" />
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-      <section class="hero">
-        <h1>Welcome to Sunshine Electronics</h1>
-        <p>Your trusted source for smart, affordable, and quality tech.</p>
-      </section>
+<body class="min-h-screen flex flex-col">
+    <header class="bg-white shadow-md py-4 px-6 md:px-10 lg:px-16 flex flex-col md:flex-row items-center justify-between">
+        <a href="index.html" class="mb-4 md:mb-0">
+            <img src="WhatsApp Image 2025-05-18 at 14.04.13_dbe65209.jpg" alt="Sunshine Electronics Logo" class="logo" />
+        </a>
+        <nav>
+            <ul class="flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-8 text-lg font-medium">
+                <li><a href="index.html" class="text-blue-600 font-bold">Home</a></li> <li><a href="about.html">About</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="flex-grow flex flex-col">
+        <section class="hero">
+            <h1>Welcome to Sunshine Electronics</h1>
+            <p>Your trusted source for smart, affordable, and quality tech. Discover innovation that brightens your everyday.</p>
+            <a href="products.html" class="bg-white text-blue-600 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-blue-100 hover:scale-105 transition-all duration-300 ease-in-out text-lg">
+                Explore Our Products
+            </a>
+        </section>
+
+        <section class="py-16 px-6 md:px-10 lg:px-16 bg-gray-100">
+            <h2 class="text-4xl font-extrabold text-center text-gray-900 mb-12">Why Choose Sunshine Electronics?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="feature-card">
+                    <svg class="w-16 h-16 text-blue-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    <h3>Cutting-Edge Technology</h3>
+                    <p>Stay ahead with the latest innovations in smartphones, smart homes, and more.</p>
+                </div>
+                <div class="feature-card">
+                    <svg class="w-16 h-16 text-green-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.592 1M12 8V3m0 9v3m0-6h.01M12 12H9.5M12 12h2.5M12 7.5a2.5 2.5 0 100 5 2.5 2.5 0 000-5z"></path></svg>
+                    <h3>Unbeatable Value</h3>
+                    <p>Premium quality electronics at prices that fit your budget.</p>
+                </div>
+                <div class="feature-card">
+                    <svg class="w-16 h-16 text-purple-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                    <h3>Customer Satisfaction</h3>
+                    <p>Dedicated support and a seamless shopping experience from start to finish.</p>
+                </div>
+            </div>
+        </section>
     </main>
-  <footer>
-    <p>&copy; 2025 Sunshine Electronics. Empowering Technology.</p>
-  </footer>
+
+    <footer class="bg-gray-800 text-white py-6 px-6 md:px-10 lg:px-16 text-center">
+        <p class="text-sm">&copy; 2025 Sunshine Electronics. Empowering Technology.</p>
+    </footer>
 </body>
 </html>
